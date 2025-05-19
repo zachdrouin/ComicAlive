@@ -1,0 +1,12 @@
+opencv-python==4.8.0.76
+numpy==1.24.3
+torch==2.0.1
+torchvision==0.15.2
+Pillow==10.0.0
+pytesseract==0.3.10
+google-cloud-texttospeech==2.13.0
+moviepy==1.0.3
+python-magic==0.4.27
+PyQt6==6.6.1
+pydub==0.25.1
+soundfile==0.12.1

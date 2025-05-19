@@ -1,0 +1,25 @@
+2025-05-19 09:01:00,254 - motion_comic - INFO - Logging initialized
+2025-05-19 09:01:00,349 - motion_comic.coordinator - INFO - Using temporary directory: /var/folders/qc/r2hnb8l97lb499tt59pnhg6w0000gn/T/motion_comic_yfx_qqqs
+2025-05-19 09:01:27,916 - motion_comic.coordinator - INFO - Extracting comic: /Volumes/Phone Drive/Media Vault/Comics and Graphic Novels/DMZ/DMZ 001-015 (2006-2007) (Digital) (K7-Empire)/DMZ 002 (2006) (Digital) (K7-Empire).cbr
+2025-05-19 09:01:27,923 - motion_comic.extractor - INFO - Extracting /Volumes/Phone Drive/Media Vault/Comics and Graphic Novels/DMZ/DMZ 001-015 (2006-2007) (Digital) (K7-Empire)/DMZ 002 (2006) (Digital) (K7-Empire).cbr to /var/folders/qc/r2hnb8l97lb499tt59pnhg6w0000gn/T/motion_comic_yfx_qqqs/extracted
+2025-05-19 09:01:27,933 - motion_comic.extractor - WARNING - unrar command failed, trying 7z
+2025-05-19 09:01:28,316 - motion_comic.ui - ERROR - Error in worker thread: Failed to extract CBR file. Make sure unrar or 7z is installed.
+Traceback (most recent call last):
+  File "/Users/zd/CascadeProjects/windsurf-project/src/core/file_extractor.py", line 92, in _extract_cbr
+    result = subprocess.run(
+  File "/Users/zd/.pyenv/versions/3.10.12/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['7z', 'x', '/Volumes/Phone Drive/Media Vault/Comics and Graphic Novels/DMZ/DMZ 001-015 (2006-2007) (Digital) (K7-Empire)/DMZ 002 (2006) (Digital) (K7-Empire).cbr', '-o/var/folders/qc/r2hnb8l97lb499tt59pnhg6w0000gn/T/motion_comic_yfx_qqqs/extracted']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zd/CascadeProjects/windsurf-project/src/ui/main_window.py", line 36, in run
+    self.coordinator.extract_comic(self.input_file)
+  File "/Users/zd/CascadeProjects/windsurf-project/src/core/project_coordinator.py", line 73, in extract_comic
+    extract_dir, image_files = self.extractor.extract(comic_file_path, extract_dir)
+  File "/Users/zd/CascadeProjects/windsurf-project/src/core/file_extractor.py", line 57, in extract
+    self._extract_cbr(file_path, output_dir)
+  File "/Users/zd/CascadeProjects/windsurf-project/src/core/file_extractor.py", line 101, in _extract_cbr
+    raise RuntimeError("Failed to extract CBR file. Make sure unrar or 7z is installed.")
+RuntimeError: Failed to extract CBR file. Make sure unrar or 7z is installed.
